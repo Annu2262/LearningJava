@@ -1,4 +1,4 @@
-package Capgemini;
+package capgemini;
 
 import java.util.Scanner;
 
