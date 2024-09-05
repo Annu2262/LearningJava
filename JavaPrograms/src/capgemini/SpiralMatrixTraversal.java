@@ -10,43 +10,32 @@ public class SpiralMatrixTraversal {
         if (matrix == null || matrix.length == 0) {
             return result;
         }
-
         int top = 0, bottom = matrix.length - 1;
         int left = 0, right = matrix[0].length - 1;
-
         while (top <= bottom && left <= right) {
-            // Traverse from left to right across the top row
             for (int i = left; i <= right; i++) {
                 result.add(matrix[top][i]);
             }
-            top++; // Move the top boundary down
-
-            // Traverse from top to bottom down the right column
+            top++; 
             for (int i = top; i <= bottom; i++) {
                 result.add(matrix[i][right]);
             }
-            right--; // Move the right boundary to the left
-
+            right--;
             if (top <= bottom) {
-                // Traverse from right to left across the bottom row
                 for (int i = right; i >= left; i--) {
                     result.add(matrix[bottom][i]);
                 }
-                bottom--; // Move the bottom boundary up
+                bottom--; 
             }
-
             if (left <= right) {
-                // Traverse from bottom to top up the left column
                 for (int i = bottom; i >= top; i--) {
                     result.add(matrix[i][left]);
                 }
-                left++; // Move the left boundary to the right
+                left++; 
             }
         }
-
         return result;
     }
-
     public static void main(String[] args) {
         int[][] matrix = {
             {1, 2, 3, 4},
